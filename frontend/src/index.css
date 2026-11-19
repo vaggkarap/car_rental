@@ -167,6 +167,17 @@ main { flex: 1; }
 }
 
 
+/* Οθόνη σύγκρισης */
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+.compare-table { width: 100%; border-collapse: collapse; min-width: 520px; }
+.compare-table th, .compare-table td {
+  padding: 0.8rem 1rem; border: 1px solid var(--border); text-align: center; vertical-align: top;
+}
+.compare-table thead th { background: var(--bg-alt); }
+.compare-table tbody th { background: var(--bg-alt); text-align: left; width: 160px; }
+.compare-table h3 { margin: 0.6rem 0 0.2rem; }
+.compare-table .best { color: #1b7a3a; font-weight: 700; background: #f1faf4; }
+
 /* Καρτέλα αυτοκινήτου */
 .gallery { position: relative; display: flex; align-items: center; gap: 0.5rem; }
 .gallery__photo { flex: 1; padding: 0; border: none; background: none; cursor: zoom-in; }

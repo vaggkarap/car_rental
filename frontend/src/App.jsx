@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import ProfilePage from './pages/ProfilePage'
 import FavouritesPage from './pages/FavouritesPage'
+import ComparePage from './pages/ComparePage'
 import CarDetailsPage from './pages/CarDetailsPage'
 
 export default function App() {
@@ -17,7 +18,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/cars" element={<CarsPage />} />
         <Route path="/cars/:id" element={<CarDetailsPage />} />
-        <Route path="/compare" element={<PlaceholderPage title="Compare cars" />} />
+        <Route path="/compare" element={<ComparePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
 
