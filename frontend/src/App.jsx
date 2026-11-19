@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import PlaceholderPage from './pages/PlaceholderPage'
+import CarsPage from './pages/CarsPage'
 import ProtectedRoute from './components/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
@@ -11,7 +12,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/cars" element={<PlaceholderPage title="Our Cars" />} />
+        <Route path="/cars" element={<CarsPage />} />
         <Route path="/cars/:id" element={<PlaceholderPage title="Car details" />} />
         <Route path="/compare" element={<PlaceholderPage title="Compare cars" />} />
         <Route path="/login" element={<LoginPage />} />
