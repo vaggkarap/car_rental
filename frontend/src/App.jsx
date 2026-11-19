@@ -8,10 +8,12 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import ProfilePage from './pages/ProfilePage'
 import FavouritesPage from './pages/FavouritesPage'
+import BookingsPage from './pages/BookingsPage'
 import ComparePage from './pages/ComparePage'
 import CarDetailsPage from './pages/CarDetailsPage'
 import HelpPage from './pages/HelpPage'
 
+// Κάθε διαδρομή αντιστοιχεί σε μια οθόνη του σχεδίου / user story.
 export default function App() {
   return (
     <Routes>
@@ -23,13 +25,13 @@ export default function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
 
-        {/* Login-only screens */}
+        {/* Οθόνες που απαιτούν login */}
         <Route element={<ProtectedRoute />}>
-          <Route path="/cars/:id/book" element={<PlaceholderPage title="Booking (US-09)" />} />
           <Route path="/favourites" element={<FavouritesPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/history" element={<PlaceholderPage title="Booking history" />} />
-          <Route path="/bookings" element={<PlaceholderPage title="Current bookings" />} />
+          <Route path="/history" element={<BookingsPage mode="history" />} />
+          <Route path="/bookings" element={<BookingsPage mode="current" />} />
+          <Route path="/cars/:id/book" element={<PlaceholderPage title="Κράτηση (US-09)" />} />
         </Route>
 
         <Route path="/help" element={<HelpPage />} />
