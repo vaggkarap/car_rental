@@ -6,6 +6,7 @@ import CarsPage from './pages/CarsPage'
 import ProtectedRoute from './components/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
+import ProfilePage from './pages/ProfilePage'
 import CarDetailsPage from './pages/CarDetailsPage'
 
 export default function App() {
@@ -23,7 +24,7 @@ export default function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/cars/:id/book" element={<PlaceholderPage title="Booking (US-09)" />} />
           <Route path="/favourites" element={<PlaceholderPage title="Favourites" />} />
-          <Route path="/profile" element={<PlaceholderPage title="Profile" />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/history" element={<PlaceholderPage title="Booking history" />} />
           <Route path="/bookings" element={<PlaceholderPage title="Current bookings" />} />
         </Route>
