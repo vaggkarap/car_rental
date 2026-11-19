@@ -50,6 +50,59 @@ main { flex: 1; }
 }
 .dropdown a:hover, .dropdown button:hover { background: var(--bg-alt); }
 
+/* Hero */
+.hero {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 2rem; padding: 3rem 1.5rem; border-bottom: 1px solid var(--border);
+}
+.hero__text { flex: 1 1 320px; text-align: center; }
+.hero h1 { font-size: 2.4rem; margin: 0 0 1.5rem; }
+.hero__images { flex: 1 1 320px; }
+.btn {
+  display: inline-block; padding: 0.8rem 1.8rem; border-radius: 999px;
+  border: 2px solid var(--brand); background: var(--brand); color: #fff; font-weight: 700;
+}
+.btn:hover { background: var(--brand-dark); }
+
+/* Sections */
+.section { padding: 2.5rem 1.5rem; text-align: center; }
+.section--alt { background: var(--bg-alt); }
+.section h2 { margin-top: 0; }
+.narrow { max-width: 700px; margin: 0 auto; text-align: left; }
+
+.cards {
+  display: grid; gap: 1.2rem; max-width: 1100px; margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; }
+.price { font-weight: 700; color: var(--brand); }
+
+.placeholder-img {
+  display: grid; place-items: center; height: 140px; border-radius: 8px;
+  background: #e3e3e6; color: #777;
+}
+
+.steps {
+  display: flex; flex-direction: column; gap: 3.5rem; max-width: 600px; margin: 2.5rem auto; padding: 0; list-style: none;
+}
+.steps__num {
+  display: inline-grid; place-items: center; width: 2.4rem; height: 2.4rem;
+  border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  column-gap: 2rem;
+  text-align: left;
+}
+.steps__num { grid-row: 1 / span 2; }
+.steps li h3 { margin: 0; }
+.steps li p { margin: 0.2rem 0 0; }
+
+.faq { border-bottom: 1px solid var(--border); padding: 0.8rem 0; }
+.faq summary { cursor: pointer; font-weight: 600; }
+
 /* Footer */
 .footer {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
