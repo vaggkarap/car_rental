@@ -219,3 +219,23 @@ main { flex: 1; }
 .lightbox__counter { position: absolute; bottom: 1.2rem; color: #fff; font-size: 1rem; }
 
 
+/* Οθόνη βοήθειας (όροι και προϋποθέσεις) */
+.help-page { text-align: left; max-width: 1100px; margin: 0 auto; }
+.help-page h2 { text-align: center; }
+.help-page__updated { text-align: center; }
+.help-layout { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; margin-top: 1.5rem; }
+.help-toc {
+  position: sticky; top: 6rem; align-self: start;
+  padding: 1rem; background: var(--bg-alt); border-radius: 12px;
+}
+.help-toc ul { list-style: none; margin: 0.6rem 0 0; padding: 0; }
+.help-toc li { margin: 0.4rem 0; }
+.help-toc a:hover { color: var(--brand); text-decoration: underline; }
+.help-section { scroll-margin-top: 6rem; margin-bottom: 1.8rem; }
+.help-section h3 { margin: 0 0 0.5rem; color: var(--brand-dark); }
+.help-section p { margin: 0.4rem 0; line-height: 1.6; }
+.help-section ul { margin: 0.4rem 0; padding-left: 1.3rem; line-height: 1.6; }
+@media (max-width: 800px) {
+  .help-layout { grid-template-columns: 1fr; }
+  .help-toc { position: static; }
+}

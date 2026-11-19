@@ -10,6 +10,7 @@ import ProfilePage from './pages/ProfilePage'
 import FavouritesPage from './pages/FavouritesPage'
 import ComparePage from './pages/ComparePage'
 import CarDetailsPage from './pages/CarDetailsPage'
+import HelpPage from './pages/HelpPage'
 
 export default function App() {
   return (
@@ -31,7 +32,7 @@ export default function App() {
           <Route path="/bookings" element={<PlaceholderPage title="Current bookings" />} />
         </Route>
 
-        <Route path="/help" element={<PlaceholderPage title="Help" />} />
+        <Route path="/help" element={<HelpPage />} />
       </Route>
     </Routes>
   )
