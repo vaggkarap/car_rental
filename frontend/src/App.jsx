@@ -6,6 +6,7 @@ import CarsPage from './pages/CarsPage'
 import ProtectedRoute from './components/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
+import CarDetailsPage from './pages/CarDetailsPage'
 
 export default function App() {
   return (
@@ -13,7 +14,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/cars" element={<CarsPage />} />
-        <Route path="/cars/:id" element={<PlaceholderPage title="Car details" />} />
+        <Route path="/cars/:id" element={<CarDetailsPage />} />
         <Route path="/compare" element={<PlaceholderPage title="Compare cars" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
