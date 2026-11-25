@@ -1,0 +1,241 @@
+/* Χρώματα σε μεταβλητές: αλλάζουν από ένα σημείο */
+:root {
+  --brand: #d62828;
+  --brand-dark: #a61e1e;
+  --on-brand: #111111;
+  --footer-bg: #111111;
+  --bg: #ffffff;
+  --bg-alt: #f4f4f5;
+  --text: #1c1c1e;
+  --border: #dddddd;
+  font-family: system-ui, Arial, sans-serif;
+  color: var(--text);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); }
+a { color: inherit; text-decoration: none; }
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+
+/* Header */
+.header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.4rem 1.2rem; background: #d62828; color: var(--on-brand);
+  border-bottom: 3px solid var(--brand);
+}
+.logo { display: flex; align-items: center; }
+.logo__img { height: 56px; width: auto; display: block; }
+.logo__img--footer { height: 64px; }
+.icon-btn { background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--on-brand); }
+
+.drawer {
+  position: absolute; top: 100%; left: 0; width: 220px;
+  display: flex; flex-direction: column; background: #fff;
+  border: 1px solid var(--border); box-shadow: 0 6px 16px rgba(0,0,0,.15);
+}
+.drawer a { padding: 0.8rem 1rem; }
+.drawer a:hover { background: var(--bg-alt); }
+
+.user-menu { position: relative; }
+.dropdown {
+  position: absolute; right: 0; top: 100%; min-width: 220px; margin: 0; padding: 0.3rem 0;
+  list-style: none; background: #fff; color: var(--text);
+  border: 1px solid var(--border); box-shadow: 0 6px 16px rgba(0,0,0,.15);
+}
+.dropdown a, .dropdown button {
+  display: block; width: 100%; padding: 0.7rem 1rem; text-align: left;
+  background: none; border: none; font: inherit; cursor: pointer; color: inherit;
+}
+.dropdown a:hover, .dropdown button:hover { background: var(--bg-alt); }
+
+/* Hero */
+.hero {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 2rem; padding: 3rem 1.5rem; border-bottom: 1px solid var(--border);
+}
+.hero__text { flex: 1 1 320px; text-align: center; }
+.hero h1 { font-size: 2.4rem; margin: 0 0 1.5rem; }
+.hero__images { flex: 1 1 320px; }
+.btn {
+  display: inline-block; padding: 0.8rem 1.8rem; border-radius: 999px;
+  border: 2px solid var(--brand); background: var(--brand); color: #fff; font-weight: 700;
+}
+.btn:hover { background: var(--brand-dark); }
+
+/* Sections */
+.section { padding: 2.5rem 1.5rem; text-align: center; }
+.section--alt { background: var(--bg-alt); }
+.section h2 { margin-top: 0; }
+.narrow { max-width: 700px; margin: 0 auto; text-align: left; }
+
+.cards {
+  display: grid; gap: 1.2rem; max-width: 1100px; margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; }
+.price { font-weight: 700; color: var(--brand); }
+
+.placeholder-img {
+  display: grid; place-items: center; height: 140px; border-radius: 8px;
+  background: #e3e3e6; color: #777;
+}
+
+.steps {
+  display: flex; flex-direction: column; gap: 3.5rem; max-width: 600px; margin: 2.5rem auto; padding: 0; list-style: none;
+}
+.steps__num {
+  display: inline-grid; place-items: center; width: 2.4rem; height: 2.4rem;
+  border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  column-gap: 2rem;
+  text-align: left;
+}
+.steps__num { grid-row: 1 / span 2; }
+.steps li h3 { margin: 0; }
+.steps li p { margin: 0.2rem 0 0; }
+
+.faq { border-bottom: 1px solid var(--border); padding: 0.8rem 0; }
+.faq summary { cursor: pointer; font-weight: 600; }
+
+/* Footer */
+.footer {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 1.5rem; background: var(--footer-bg); color: #d62828;
+}
+.footer p, .footer address { margin: 0; font-style: normal; }
+
+/* Οθόνη αναζήτησης */
+.cars-page { text-align: left; max-width: 1100px; margin: 0 auto; }
+.cars-page h2 { text-align: center; }
+.filters { background: var(--bg-alt); border-radius: 12px; padding: 1rem; margin-bottom: 1rem; }
+.filters__row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; }
+.filters label { display: flex; flex-direction: column; gap: 0.3rem; font-weight: 600; }
+.filters input, .filters select {
+  padding: 0.5rem; border: 1px solid var(--border); border-radius: 6px; font: inherit;
+}
+.filters__text { width: 100%; margin-top: 1rem; }
+.filters .btn { margin-left: auto; cursor: pointer; }
+.error { color: var(--brand-dark); font-weight: 600; margin: 0.8rem 0 0; }
+.muted { color: #666; margin: 0.2rem 0; }
+
+.car-grid {
+  display: grid; gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.car-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; }
+.car-card p { margin: 0.3rem 0; }
+.car-card__top { display: flex; justify-content: space-between; align-items: center; }
+.car-card__top h3 { margin: 0; }
+.heart { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+.heart--on { color: var(--brand); }
+
+.btn--small { padding: 0.4rem 1rem; font-size: 0.9rem; cursor: pointer; margin-top: 0.5rem; }
+.btn--on { background: var(--on-brand); border-color: var(--on-brand); }
+.compare-bar {
+  display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;
+  padding: 0.6rem 1rem; background: #fff3f3; border: 1px solid var(--brand); border-radius: 8px;
+}
+.compare-bar .btn--small { margin: 0; }
+
+
+/* Φόρμες σύνδεσης, εγγραφής, προφίλ */
+.auth-form {
+  display: flex; flex-direction: column; gap: 1rem; text-align: left;
+  max-width: 420px; margin: 0 auto 2rem; padding: 1.5rem;
+  background: #fff; border: 1px solid var(--border); border-radius: 12px;
+}
+.auth-form h2, .auth-form h3 { margin: 0; text-align: center; }
+.auth-form label { display: flex; flex-direction: column; gap: 0.3rem; font-weight: 600; }
+.auth-form input {
+  padding: 0.6rem; border: 1px solid var(--border); border-radius: 6px; font: inherit; font-weight: 400;
+}
+.auth-form .btn { cursor: pointer; align-self: center; }
+.auth-form .btn:disabled { opacity: 0.6; cursor: default; }
+.auth-form__alt { text-align: center; margin: 0; }
+.auth-form__alt a { color: var(--brand); font-weight: 600; }
+.field-error { color: var(--brand-dark); font-size: 0.85rem; font-weight: 400; }
+.success { color: #1b7a3a; font-weight: 600; margin: 0; }
+.badge {
+  display: inline-block; margin-top: 0.4rem; padding: 0.2rem 0.7rem; border-radius: 999px;
+  background: var(--bg-alt); border: 1px solid var(--border); font-size: 0.85rem;
+}
+
+
+/* Οθόνη σύγκρισης */
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+.compare-table { width: 100%; border-collapse: collapse; min-width: 520px; }
+.compare-table th, .compare-table td {
+  padding: 0.8rem 1rem; border: 1px solid var(--border); text-align: center; vertical-align: top;
+}
+.compare-table thead th { background: var(--bg-alt); }
+.compare-table tbody th { background: var(--bg-alt); text-align: left; width: 160px; }
+.compare-table h3 { margin: 0.6rem 0 0.2rem; }
+.compare-table .best { color: #1b7a3a; font-weight: 700; background: #f1faf4; }
+
+/* Καρτέλα αυτοκινήτου */
+.gallery { position: relative; display: flex; align-items: center; gap: 0.5rem; }
+.gallery__photo { flex: 1; padding: 0; border: none; background: none; cursor: zoom-in; }
+.gallery__img { width: 100%; height: 380px; object-fit: cover; border-radius: 12px; }
+.placeholder-img.gallery__img { height: 380px; font-size: 1.4rem; }
+.gallery__arrow {
+  width: 2.8rem; height: 2.8rem; border-radius: 50%; border: 1px solid var(--border);
+  background: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; flex-shrink: 0;
+}
+.gallery__arrow:hover { background: var(--bg-alt); }
+.gallery__counter {
+  position: absolute; right: 4rem; bottom: 0.8rem; padding: 0.2rem 0.7rem;
+  background: rgba(0,0,0,.65); color: #fff; border-radius: 999px; font-size: 0.9rem;
+}
+
+.details { margin-top: 1.5rem; }
+.details__head { display: flex; justify-content: space-between; align-items: center; }
+.details__head h2 { margin: 0; text-align: left; }
+.specs { margin: 1rem 0; }
+.specs__row { display: flex; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+.specs dt { width: 140px; font-weight: 600; }
+.specs dd { margin: 0; }
+.details__footer { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; }
+.price--big { font-size: 1.6rem; margin: 0; }
+.btn--outline { background: #fff; color: var(--brand); text-align: center; }
+.btn--outline:hover { background: #fff3f3; }
+.car-card .btn { margin-right: 0.4rem; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center;
+  gap: 1rem; background: rgba(0,0,0,.88);
+}
+.lightbox__img { max-width: 80vw; max-height: 80vh; object-fit: contain; border-radius: 8px; }
+.placeholder-img.lightbox__img { width: 70vw; height: 60vh; font-size: 1.6rem; }
+.lightbox__close {
+  position: absolute; top: 1rem; right: 1.2rem; width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  border: none; background: #fff; font-size: 1.2rem; cursor: pointer;
+}
+.lightbox__counter { position: absolute; bottom: 1.2rem; color: #fff; font-size: 1rem; }
+
+
+/* Οθόνη βοήθειας (όροι και προϋποθέσεις) */
+.help-page { text-align: left; max-width: 1100px; margin: 0 auto; }
+.help-page h2 { text-align: center; }
+.help-page__updated { text-align: center; }
+.help-layout { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; margin-top: 1.5rem; }
+.help-toc {
+  position: sticky; top: 6rem; align-self: start;
+  padding: 1rem; background: var(--bg-alt); border-radius: 12px;
+}
+.help-toc ul { list-style: none; margin: 0.6rem 0 0; padding: 0; }
+.help-toc li { margin: 0.4rem 0; }
+.help-toc a:hover { color: var(--brand); text-decoration: underline; }
+.help-section { scroll-margin-top: 6rem; margin-bottom: 1.8rem; }
+.help-section h3 { margin: 0 0 0.5rem; color: var(--brand-dark); }
+.help-section p { margin: 0.4rem 0; line-height: 1.6; }
+.help-section ul { margin: 0.4rem 0; padding-left: 1.3rem; line-height: 1.6; }
+@media (max-width: 800px) {
+  .help-layout { grid-template-columns: 1fr; }
+  .help-toc { position: static; }
+}
